@@ -25,11 +25,6 @@ namespace AStarSearch
                 
                 if (current.IsFinal())
                 {
-                    //while (pq.TryDequeue(out Puzzle puzzle, out int priority))
-                    //{
-                    //    Console.WriteLine(priority + " ");
-                    //}
-                    //Console.WriteLine("\n");
                     return current;
                 }
 
@@ -42,7 +37,7 @@ namespace AStarSearch
                         visited.Add(Node);
                         Node.IsVisited = true;
                         Node.Parent = current;
-                        Node.RealCost++;
+                        Node.RealCost = current.RealCost + 1;
                         pq.Enqueue(Node, Node.HeuristicCost() + Node.RealCost);
                     }
                 }

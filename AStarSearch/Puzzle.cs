@@ -202,7 +202,7 @@ namespace AStarSearch
             for (int i = list.Count - 1; i >= 0; i--)
             {
                 final += "Step " + (list.Count - i).ToString() + "\n------\n";
-                final += "Cost: " + list[i].HeuristicCost() + "\n";
+                final += "Heuristic Cost: " + (list[i].HeuristicCost()).ToString()+ "  Path Cost: "+ list[i].RealCost + "\n";
                 for (int j = 0; j < Size; j++)
                 {
                     for (int k = 0; k < Size; k++)
@@ -211,15 +211,7 @@ namespace AStarSearch
                         if (k == 2) final += "\n";
                     }
                 }
-                //final += list[i].CurrBoard[0, 1] + "  ";
-                //final += list[i].CurrBoard[1] + "  ";
-                //final += list[i].CurrBoard[2] + "\n";
-                //final += list[i].CurrBoard[3] + "  ";
-                //final += list[i].CurrBoard[4] + "  ";
-                //final += list[i].CurrBoard[5] + "\n";
-                //final += list[i].CurrBoard[6] + "  ";
-                //final += list[i].CurrBoard[7] + "  ";
-                //final += list[i].CurrBoard[8] + "  ";
+
                 final += "\n\n";
             }
 
